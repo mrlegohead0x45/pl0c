@@ -1,11 +1,34 @@
 #[derive(Debug)]
-struct Token {
+pub(crate) struct Token {
     kind: TokenKind,
     span: Span,
 }
 
 #[derive(Debug)]
-enum TokenKind {}
+enum TokenKind {
+    Integer(i64),
+
+    Plus,
+    Minus,
+    Asterisk,
+    Slash,
+
+    LParen,
+    RParen,
+
+    Eq,
+    ColonEq,
+    EqEq,
+    NotEq,
+
+    LAngle,
+    RAngle,
+    LAngleEq,
+    RAngleEq,
+
+    Comma,
+    Semicolon,
+}
 
 #[derive(Debug)]
 struct Span {
